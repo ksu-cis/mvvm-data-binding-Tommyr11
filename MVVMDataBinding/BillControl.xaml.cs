@@ -24,7 +24,7 @@ namespace MVVMDataBinding
             DependencyProperty.Register(
                 "Denomination",                     // The name of the property
                 typeof(Bills),                      // The type of the property
-                typeof(CoinControl),                // The property's control
+                typeof(BillControl),                // The property's control
                 new PropertyMetadata(Bills.One)   // The Property Medata
                 );
         /// <summary>

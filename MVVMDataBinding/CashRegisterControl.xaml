@@ -19,6 +19,15 @@
             <local:CoinControl Denomination="HalfDollar" Quantity="{Binding Path=HalfDollars}"/>
             <local:CoinControl Denomination="Dollar" Quantity="{Binding Path=Dollars}"/>
         </StackPanel>
-       
+        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
+            <local:BillControl Denomination="One" Quantity="{Binding Path=Ones}"/>
+            <local:BillControl Denomination="Two" Quantity="{Binding Path=Twos}"/>
+            <local:BillControl Denomination="Five" Quantity="{Binding Path=Fives}"/>
+            <local:BillControl Denomination="Ten" Quantity="{Binding Path=Tens}"/>
+            <local:BillControl Denomination="Twenty" Quantity="{Binding Path=Twenty}"/>
+            <local:BillControl Denomination="Fifty" Quantity="{Binding Path=Fifty}"/>
+            <local:BillControl Denomination="Hundred" Quantity="{Binding Path=Hundred}"/>
+        </StackPanel>
     </Grid>
 </UserControl>
+
