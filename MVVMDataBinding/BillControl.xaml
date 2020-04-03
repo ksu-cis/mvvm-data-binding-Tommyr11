@@ -5,8 +5,25 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MVVMDataBinding"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+             Width="120" Height="120"
+             d:DesignHeight="120" d:DesignWidth="120">
+    <Border BorderBrush="Gray" BorderThickness="1" Padding="5">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+            <Border BorderThickness="1" BorderBrush="DarkGreen" CornerRadius="50" Background="Green" Margin="-16 0" Grid.Column="1">
+                <TextBlock Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:BillControl}}, Path=Denomination}"/>
+            </Border>
+            <Button Grid.Row="1" Grid.Column="0" Click="OnDecreaseClicked">-</Button>
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:BillControl}}, Path=Quantity}"></TextBlock>
+            <Button Grid.Row="1" Grid.Column="2" Click="OnIncreaseClicked">+</Button>
+        </Grid>
+    </Border>
 </UserControl>

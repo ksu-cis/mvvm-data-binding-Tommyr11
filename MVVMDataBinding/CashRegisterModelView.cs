@@ -115,6 +115,51 @@ namespace MVVMDataBinding
         }
 
         /// <summary>
+        /// Gets or sets the number of pennies in the cash register
+        /// </summary>
+        public int HalfDollars
+        {
+            get => drawer.HalfDollars;
+
+            set
+            {
+                if (drawer.HalfDollars == value || value < 0) return;
+                var quantity = value - drawer.HalfDollars;
+                if (quantity > 0)
+                {
+                    drawer.AddCoin(Coins.HalfDollar, quantity);
+                }
+                else
+                {
+                    drawer.RemoveCoin(Coins.HalfDollar, -quantity);
+                }
+                InvokePropertyChanged("HalfDollars");
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the number of pennies in the cash register
+        /// </summary>
+        public int Dollars
+        {
+            get => drawer.Dollars;
+
+            set
+            {
+                if (drawer.Dollars == value || value < 0) return;
+                var quantity = value - drawer.Dollars;
+                if (quantity > 0)
+                {
+                    drawer.AddCoin(Coins.Dollar, quantity);
+                }
+                else
+                {
+                    drawer.RemoveCoin(Coins.Dollar, -quantity);
+                }
+                InvokePropertyChanged("Dollars");
+            }
+        }
+        /// <summary>
         /// Gets or sets the number of Fiftys in the cash register
         /// </summary>
         public int Ones
